@@ -1,4 +1,4 @@
-# PrognosticsModelLibrary
+# Prognostics Model Library
 
 The Prognostics Model Library is a modeling framework focused on defining and building models for prognostics (computation of remaining useful life) of engineering systems, and provides a set of prognostics models for select components developed within this framework, suitable for use in prognostics applications for these components. The library currently includes models for valves, pumps, and batteries. The Prognostics Model Library is implemented in MATLAB. The implementation consists of a set of utilities for defining a model (specifying variables, parameters, and equations), simulating the model, and embedding it within common model-based prognostics algorithms. A user can use existing models within the library or construct new models with the provided framework.
 
@@ -17,6 +17,10 @@ The PrognosticsModelLibrary has been tested with Matlab R2016a, but should work 
 ## Contributions
 
 All contributions are welcome. Issues may be opened using GitHub. To contribute directly, open a pull request against the "develop" branch. Pull requests will be evaluated and integrated into the next official release.
+
+## License
+
+This software is released under the [NASA Open Source Agreement Version 1.3](https://github.com/nasa/PrognosticsModelLibrary/blob/master/LICENSE.pdf).
 
 ## Notices
 
