@@ -4,7 +4,7 @@ The Prognostics Model Library is a modeling framework focused on defining and bu
 
 ## User Manual
 
-See [docs/PrognosticsModelLibrary-UserManual.pdf].
+See <docs/PrognosticsModelLibrary-UserManual.pdf>.
 
 ## Compatibility
 
