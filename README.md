@@ -4,7 +4,7 @@ The Prognostics Model Library is a modeling framework focused on defining and bu
 
 ## Installation
 
-Installation can be done in one of two ways. Either (1) use the provided MATLAB toolbox installer provided in the install folder, which will install the toolbox in your local toolboxes folder and add the folder to your MATLAB path, or (2) copy the source from the MATLAB folder to any desired directory, and add that directory to your MATLAB path. Do not add the subdirectories (the package directories) to your MATLAB path. If the first option is used, then the MATLAB add-on manager can be used to uninstall the package; otherwise, the installation can be removed manually be removing the directory from your MATLAB path and deleting the source.
+Installation can be done in one of two ways. Either (1) use the MATLAB toolbox installer provided in the install folder, which will install the toolbox in your local toolboxes folder and add the folder to your MATLAB path, or (2) copy the source from the MATLAB folder to any desired directory, and add that directory to your MATLAB path. Do not add the subdirectories (the package directories) to your MATLAB path. If the first option is used, then the MATLAB add-on manager can be used to uninstall the package; otherwise, the installation can be removed manually by removing the directory from your MATLAB path and deleting the source.
 
 ## User Manual
 
