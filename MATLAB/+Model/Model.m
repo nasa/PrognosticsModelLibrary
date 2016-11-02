@@ -301,7 +301,7 @@ classdef Model < handle
             [x0, u0, z0] = M.getDefaultInitialization(0);
             if ~isempty(options.x0)
                 x0 = options.x0;
-                z0 = M.outputEqn(t0,x0,u0,options.enableSensorNoise*M.generateSensorNoise());
+                z0 = M.outputEqn(options.t0,x0,u0,options.enableSensorNoise*M.generateSensorNoise());
             end
             
             % Preallocate output data: columns represent times
