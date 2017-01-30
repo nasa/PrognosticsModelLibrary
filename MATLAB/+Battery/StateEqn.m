@@ -5,7 +5,7 @@ function XNew = StateEqn(parameters,t,X,U,N,dt)
 %   battery model given the parameters strcucture, the current time, the
 %   current states, inputs, process noise, and the sampling time.
 %
-%   Copyright (c)Â 2016 United States Government as represented by the
+%   Copyright (c) 2016 United States Government as represented by the
 %   Administrator of the National Aeronautics and Space Administration.
 %   No copyright is claimed in the United States under Title 17, U.S.
 %   Code. All Other Rights Reserved.
@@ -27,11 +27,9 @@ P = U(1,:);
 Tbdot = 0;
 CnBulk = qnB./parameters.VolB;
 CnSurface = qnS./parameters.VolS;
-xSn = qnS./parameters.qSMax;
 CpSurface = qpS./parameters.VolS;
 xnS = qnS./parameters.qSMax;
 Ven5 = parameters.An5.*((2.*xnS-1).^(5+1) - (2.*xnS.*5.*(1-xnS))./(2.*xnS-1).^(1-5))./parameters.F;
-xSp = qpS./parameters.qBMax;
 xpS = qpS./parameters.qSMax;
 Vep3 = parameters.Ap3.*((2.*xpS-1).^(3+1) - (2.*xpS.*3.*(1-xpS))./(2.*xpS-1).^(1-3))./parameters.F;
 Vep12 = parameters.Ap12.*((2.*xpS-1).^(12+1) - (2.*xpS.*12.*(1-xpS))./(2.*xpS-1).^(1-12))./parameters.F;
@@ -43,11 +41,11 @@ CpBulk = qpB./parameters.VolB;
 Vep8 = parameters.Ap8.*((2.*xpS-1).^(8+1) - (2.*xpS.*8.*(1-xpS))./(2.*xpS-1).^(1-8))./parameters.F;
 qdotDiffusionBSn = (CnBulk-CnSurface)./parameters.tDiffusion;
 qnBdot = - qdotDiffusionBSn;
-Jn0 = parameters.kn.*(1-xSn).^parameters.alpha.*(xSn).^parameters.alpha;
+Jn0 = parameters.kn.*(1-xnS).^parameters.alpha.*(xnS).^parameters.alpha;
 Ven3 = parameters.An3.*((2.*xnS-1).^(3+1) - (2.*xnS.*3.*(1-xnS))./(2.*xnS-1).^(1-3))./parameters.F;
 qdotDiffusionBSp = (CpBulk-CpSurface)./parameters.tDiffusion;
 Ven0 = parameters.An0.*((2.*xnS-1).^(0+1))./parameters.F;
-Jp0 = parameters.kp.*(1-xSp).^parameters.alpha.*(xSp).^parameters.alpha;
+Jp0 = parameters.kp.*(1-xpS).^parameters.alpha.*(xpS).^parameters.alpha;
 Ven10 = parameters.An10.*((2.*xnS-1).^(10+1) - (2.*xnS.*10.*(1-xnS))./(2.*xnS-1).^(1-10))./parameters.F;
 Ven7 = parameters.An7.*((2.*xnS-1).^(7+1) - (2.*xnS.*7.*(1-xnS))./(2.*xnS-1).^(1-7))./parameters.F;
 Ven2 = parameters.An2.*((2.*xnS-1).^(2+1) - (2.*xnS.*2.*(1-xnS))./(2.*xnS-1).^(1-2))./parameters.F;
