@@ -8,7 +8,9 @@ Installation can be done in one of two ways. Either (1) use the MATLAB toolbox i
 
 ## User Manual
 
-See https://github.com/nasa/PrognosticsModelLibrary/blob/master/docs/PrognosticsModelLibrary-UserManual.pdf.
+Instructions for using the software can be found in the following sources:
+- [Wiki](https://github.com/nasa/PrognosticsModelLibrary/wiki)
+- [User Manual](https://github.com/nasa/PrognosticsModelLibrary/blob/master/docs/PrognosticsModelLibrary-UserManual.pdf).
 
 ## Compatibility
 
