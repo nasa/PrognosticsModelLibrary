@@ -17,7 +17,7 @@ function U = InputEqn(parameters,t,inputParameters)
 %   time is assumed to be 0, so if t is given as 150 s, for example, then
 %   the load magnitude will be 2 W (second segment).
 %
-%   Copyright (c)Â 2016 United States Government as represented by the
+%   Copyright (c) 2016 United States Government as represented by the
 %   Administrator of the National Aeronautics and Space Administration.
 %   No copyright is claimed in the United States under Title 17, U.S.
 %   Code. All Other Rights Reserved.

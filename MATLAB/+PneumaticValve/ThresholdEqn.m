@@ -9,7 +9,7 @@ function B = ThresholdEqn(parameters,t,X,U)
 %   damage parameters (leak areas, friction coefficient, spring
 %   coefficient).
 %
-%   Copyright (c)Â 2016 United States Government as represented by the
+%   Copyright (c) 2016 United States Government as represented by the
 %   Administrator of the National Aeronautics and Space Administration.
 %   No copyright is claimed in the United States under Title 17, U.S.
 %   Code. All Other Rights Reserved.

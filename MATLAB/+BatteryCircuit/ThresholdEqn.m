@@ -5,7 +5,7 @@ function B = ThresholdEqn(parameters,t,X,U)
 %   for the given time, states, and inputs, has crossed the voltage
 %   threshold defining end-of-discharge. 
 %
-%   Copyright (c)Â 2016 United States Government as represented by the
+%   Copyright (c) 2016 United States Government as represented by the
 %   Administrator of the National Aeronautics and Space Administration.
 %   No copyright is claimed in the United States under Title 17, U.S.
 %   Code. All Other Rights Reserved.
