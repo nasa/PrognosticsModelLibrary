@@ -17,34 +17,27 @@ function U = InputEqn(parameters,t,inputParameters)
 %   time is assumed to be 0, so if t is given as 150 s, for example, then
 %   the load magnitude will be 2 W (second segment).
 %
-%   Copyright (c) 2016 United States Government as represented by the
+%   Copyright (c)Â 2016 United States Government as represented by the
 %   Administrator of the National Aeronautics and Space Administration.
 %   No copyright is claimed in the United States under Title 17, U.S.
 %   Code. All Other Rights Reserved.
 
+persistent loads times loadParameters;
 U = [];
-
 if nargin<3
-    % If no u specified, assume default load.
-    P = 8;
+    U(1,:) = 8;
 else
-    % If u specified, interpret as variable loading scheme, where each
-    % column of inputParameters is a vector with an even number of
-    % elements. The first of the pair of numbers is the magnitude of the
-    % load, the second is the duration.
-    for i=1:size(inputParameters,2)
-        u = inputParameters(:,i);
-        loads = u(1:2:end);
-        durations = u(2:2:end);
-        times = [0; cumsum(durations)];
-        % Find which load corresponds to given time
-        loadIndex = find(t>=times,1,'last');
-        if loadIndex>length(loads)
-            P(i) = loads(end);
-        else
-            P(i) = loads(loadIndex);
-        end
+    if isempty(loads) || ~isequal(loadParameters,inputParameters)
+        loadParameters=inputParameters;
+        loads = loadParameters(1:2:end,:);
+        loads(end+1,:)=loads(end,:);
+        durations = loadParameters(2:2:end,:);
+        times = [zeros(1,size(loadParameters,2)); cumsum(durations,1)];
     end
-end
 
-U(1,:) = P;
+    loadindex=false(size(loads));
+    for i=1:size(times,2)
+        loadindex(find(times(:,i)<t,1,'last'), i)=true;
+    end
+    U(1,:)=loads(loadindex);
+end
