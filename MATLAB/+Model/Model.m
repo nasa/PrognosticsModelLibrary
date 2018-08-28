@@ -60,6 +60,7 @@ classdef Model < handle
         
         V;                    % Process noise variances (vector)
         N;                    % Sensor noise variances for current sensor set (vector)
+        x0Variance;           % Initial states variance (vector) 
         P;                    % Static parameters structure
         
         indices;  % Structure to get indices of states, inputs, outputs by name
@@ -128,6 +129,15 @@ classdef Model < handle
             % Set up sensor noise variances vector
             for i=1:length(M.outputs)
                 M.N(i,1) = M.outputs(i).Noise;
+            end
+            
+            % Set up initial states variances vector
+            for i=1:length(M.states)
+                if isfield(M.states(i),'x0Variance')
+                    M.x0Variance(i,1) = M.states(i).x0Variance;
+                else
+                    M.x0Variance(i,1)=  M.states(i).Noise;
+                end
             end
             
             % Setup indices structure
