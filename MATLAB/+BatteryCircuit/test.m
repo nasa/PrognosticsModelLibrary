@@ -23,7 +23,7 @@ fprintf('EOD time is %g s\n',T(end));
 % Simulate for a variable load profile
 % Specified by a sequence of pairs of numbers, where the first is the load
 % (in Watts) and the second is the duration (in seconds).
-loads = [2 10*60 1 5*60 4 15*60 2 20*60 3 10*60];
+loads = [2; 10*60; 1; 5*60; 4; 15*60; 2; 20*60; 3; 10*60];
 battery.inputEqnHandle = @(P,t)BatteryCircuit.InputEqn(P,t,loads);
 [T,X,U,Z] = battery.simulate(3000,'printTime',60);
 

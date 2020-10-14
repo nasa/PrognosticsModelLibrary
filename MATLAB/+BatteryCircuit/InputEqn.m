@@ -1,4 +1,4 @@
-function U = InputEqn(parameters,t,u)
+function U = InputEqn(parameters,t,inputParameters)
 % InputEqn   Compute battery inputs for the given time and input parameters
 %
 %   U = InputEqn(parameters,t,inputParameters) computes the inputs to the
@@ -31,15 +31,18 @@ else
     % If u specified, interpret as variable loading scheme, where u is a
     % vector with an even number of elements. The first of the pair of
     % numbers is the magnitude of the load, the second is the duration.
-    loads = u(1:2:end);
-    durations = u(2:2:end);
-    times = [0 cumsum(durations)];
-    % Find which load corresponds to given time
-    loadIndex = find(t>=times,1,'last');
-    if loadIndex>length(loads)
-        current = loads(end);
-    else
-        current = loads(loadIndex);
+    for ii = 1:size(inputParameters,2)
+        u = inputParameters(:,ii);
+        loads = u(1:2:end);
+        durations = u(2:2:end);
+        times = [0; cumsum(durations)];
+        % Find which load corresponds to given time
+        loadIndex = find(t>=times,1,'last');
+        if loadIndex>length(loads)
+            current(ii) = loads(end);
+        else
+            current(ii) = loads(loadIndex);
+        end
     end
 end
 
